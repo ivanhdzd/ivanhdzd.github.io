@@ -1,3 +1,22 @@
-.title {
-	text-align: center;
+.active {
+	border-bottom: white 2px solid !important;
+	color: white !important;
+}
+
+footer {
+	color: white;
+}
+
+@media screen and (max-width: 633px) {
+	#router-container {
+		margin-top: 4rem;
+		min-height: calc(100vh - 14.5rem);
+	}
+}
+
+@media screen and (min-width: 634px) {
+	#router-container {
+		margin-top: 5rem;
+		min-height: calc(100vh - 15.5rem);
+	}
 }

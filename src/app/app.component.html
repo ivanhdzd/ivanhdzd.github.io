@@ -1,2 +1,25 @@
-<h1 class="title">Hello world!</h1>
-<router-outlet></router-outlet>
+<nav id="navbar" class="navbar navbar-expand fixed-top navbar-dark bg-dark">
+	<div class="container-fluid">
+		<div class="collapse navbar-collapse" id="navbar-content">
+			<ul class="navbar-nav mr-auto"></ul>
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/inicio" routerLinkActive="active">INICIO</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" routerLink="/sobre-mi" routerLinkActive="active">SOBRE MI</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<section class="m-3 mx-sm-5 px-sm-5">
+	<article id="router-container" class="mx-md-3 mx-lg-5 px-md-3 px-lg-5">
+		<router-outlet></router-outlet>
+	</article>
+</section>
+
+<footer class="bg-dark text-center mt-5 py-5">
+	Iv&aacute;nHdzD &middot; 2019
+</footer>

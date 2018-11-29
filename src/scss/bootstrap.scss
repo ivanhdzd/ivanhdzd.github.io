@@ -1,0 +1,74 @@
+/** Reference: https://getbootstrap.com/docs/4.0/getting-started/theming/ */
+
+/** Full */
+// @import "~bootstrap/scss/boostrap";
+
+/** Required */
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+/** Optional */
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/code";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/jumbotron";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/print";
+
+/** Grid hack */
+@media screen and (max-width: 575px) { .col-0 { display: none !important; } }
+@media screen and (min-width: 576px) and (max-width: 767px) { .col-sm-0 { display: none !important; } }
+@media screen and (min-width: 768px) and (max-width: 990px) { .col-md-0 { display: none !important; } }
+@media screen and (min-width: 991px) and (max-width: 1199px) { .col-lg-0 { display: none !important; } }
+@media screen and (min-width: 1200px) { .col-xl-0 { display: none !important; } }
+
+/** TO ADDS JAVASCRIPT BOOTSTRAP, YOU NEED TO ADDS BELOW DATA INTO angular.json scripts array:
+
+// Required
+"node_modules/jquery/dist/jquery.slim.min.js",
+"node_modules/popper.js/dist/umd/popper.min.js",
+
+// Full
+"node_modules/bootstrap/dist/js/bootstrap.min.js"
+
+// Each functionality
+"node_modules/bootstrap/js/dist/alert.js",
+"node_modules/bootstrap/js/dist/button.js",
+"node_modules/bootstrap/js/dist/carousel.js",
+"node_modules/bootstrap/js/dist/collapse.js",
+"node_modules/bootstrap/js/dist/dropdown.js",
+"node_modules/bootstrap/js/dist/modal.js",
+"node_modules/bootstrap/js/dist/popover.js",
+"node_modules/bootstrap/js/dist/scrollspy.js",
+"node_modules/bootstrap/js/dist/tab.js",
+"node_modules/bootstrap/js/dist/tooltip.js",
+"node_modules/bootstrap/js/dist/util.js"
+
+*/
