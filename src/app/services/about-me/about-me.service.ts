@@ -7,12 +7,20 @@ import { BaseHttpService } from '../base-http.service';
 	providedIn: 'root'
 })
 export class AboutMeService extends BaseHttpService {
+	/** About me marketplace content */
+	private _aboutMe: string = null;
 
 	constructor(protected http: HttpClient) {
 		super(http);
 	}
 
+	/**
+	 * Get about data from Github page.
+	 * @returns (string) about me marketplace content.
+	 */
 	public async getAboutData(): Promise<string> {
-		return decodeURIComponent(escape(atob((await this.GetFile('about-me'))['content'])));
+		if (this._aboutMe) return this._aboutMe;
+		this._aboutMe = await this.GetFile('about-me');
+		return this._aboutMe;
 	}
 }

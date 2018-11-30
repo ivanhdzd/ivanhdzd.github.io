@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxMdModule } from 'ngx-md';
 
 import { AppRoutingModule } from './modules/app-routing.module';
+import { NgrxStoreModule } from './modules/ngrx-store.module';
 
 import { AboutMeService } from './services/about-me/about-me.service';
 import { BlogService } from './services/blog/blog.service';
@@ -29,7 +30,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 		BrowserAnimationsModule,
 		HttpClientModule,
 		NgxMdModule.forRoot(),
-		AppRoutingModule
+		AppRoutingModule,
+		NgrxStoreModule
 	],
 	providers: [AboutMeService, BlogService],
 	bootstrap: [AppComponent]

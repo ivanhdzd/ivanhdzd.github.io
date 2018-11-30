@@ -9,5 +9,5 @@ export class PageNotFoundComponent implements OnInit {
 
 	constructor() { }
 
-	public async ngOnInit(): Promise<void> { }
+	public ngOnInit(): void { }
 }
