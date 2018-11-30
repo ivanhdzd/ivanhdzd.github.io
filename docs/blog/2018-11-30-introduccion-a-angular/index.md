@@ -456,7 +456,7 @@ ng generate component pages/todos
 
 *Prestando atención al comando ejecutado, el comando **ng** es propio de Angular y se usa para hacer uso del CLI, posteriormente se observa el parámetro **generate** que indica que se va a generar un archivo o conjunto de archivos propios de Angular, seguido se encuentra el parámetro **component** que indica que se va a generar un nuevo componente, finalmente se encuentra la ruta y nombre del componente en la sección **pages/todos**.*
 
-Al abrir el archivo `src/app&pages/todos/todos.component.ts`, veremos un contenido similar a:
+Al abrir el archivo `src/app/pages/todos/todos.component.ts`, veremos un contenido similar a:
 
 ```ts
 import { Component, OnInit } from '@angular/core';
@@ -594,8 +594,6 @@ El resultado será similar a:
 
 ![Componentes en Angular](https://github.com/ivanhdzd/ivanhdzd.github.io/raw/docs/docs/blog/2018-11-30-introduccion-a-angular/components.jpg "Componentes en Angular")
 
-Otros desarrolladores Angular acostumbran generar un componente para la barra de navegación y otro para el footer, en lo personal, como son componentes que sólo se van a usar desde el componente padre, acostumbro poner su respectivo código directamente en lugar de usar componentes, pero eso es desición de cada quien, si prefieres separarlos, te aconsejo generarlos dentro del directorio `src/app/components`.
-
 ## Configurando el módulo routing
 
 Es momento de configurar el routing de nuestra aplicación, el routing se basa en generar rutas dentro de nuestra aplicación, y cada ruta debe mostrar una vista diferente, para nuestro ejemplo de TODOs vamos a generar 3 rutas:
@@ -684,6 +682,8 @@ Finalmente removemos los componentes declarados dentro del componente padre `App
 ```
 
 En Angular, en las etiquetas `<a>` se sustituye el atributo `href` por `routerLink`, y si se desea inyectar una clase CSS cuando dicha ruta esté activa, se agrega el atributo `routerLinkActive` y el nombre de la clase a inyectar como valor de éste, en nuestro caso, cuando la ruta está activa se inyecta la clase `active`, que será definida a continuación.
+
+Otros desarrolladores Angular acostumbran generar un componente para la barra de navegación y otro para el footer, en lo personal, como son componentes que sólo se van a usar desde el componente padre, acostumbro poner su respectivo código directamente en lugar de usar componentes, pero eso es desición de cada quien, si prefieres separarlos, te aconsejo generarlos dentro del directorio `src/app/components`.
 
 Agregamos algo de estilo SCSS a `AppComponent`:
 
