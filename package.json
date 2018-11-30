@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"scripts": {
 		"ng": "ng",
-		"build": "ng build --prod --base-href 'https://ivanhdzd.github.io/'",
+		"build": "ng build --prod --base-href https://ivanhdzd.github.io/",
 		"postbuild": "npx ngh --dir public --branch master",
 		"dev": "ng serve --port 5000",
 		"test": "ng test",
