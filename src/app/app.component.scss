@@ -8,12 +8,6 @@ footer {
 }
 
 #router-container {
-    @media screen and (max-width: 633px) {
-        margin-top: 4rem;
-        min-height: calc(100vh - 14.5rem);
-    }
-    @media screen and (min-width: 634px) {
-        margin-top: 5rem;
-        min-height: calc(100vh - 15.5rem);
-    }
+	margin-top: 4.5rem;
+	min-height: calc(100vh - 14.5rem);
 }
