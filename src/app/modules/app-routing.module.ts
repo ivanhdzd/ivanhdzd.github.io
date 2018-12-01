@@ -7,8 +7,8 @@ import { PostComponent } from '../pages/post/post.component';
 import { PageNotFoundComponent } from '../pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-	{ path: '', redirectTo: 'inicio', pathMatch: 'full' },
-	{ path: 'inicio', component: BlogComponent },
+	{ path: '', redirectTo: 'blog', pathMatch: 'full' },
+	{ path: 'blog', component: BlogComponent },
 	{ path: 'post/:id', component: PostComponent },
 	{ path: 'sobre-mi', component: AboutMeComponent },
 	{ path: '**', component: PageNotFoundComponent }
