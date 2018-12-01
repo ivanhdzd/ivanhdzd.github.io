@@ -4,7 +4,8 @@
 	"scripts": {
 		"ng": "ng",
 		"build": "ng build --prod --base-href https://ivanhdzd.github.io/",
-		"postbuild": "npx ngh --dir dist --branch master",
+		"publish": "npx ngh --dir dist --branch master",
+		"prepublish": "node scripts/prepublish",
 		"dev": "ng serve --port 5000",
 		"test": "ng test",
 		"lint": "ng lint",
