@@ -1,0 +1,8 @@
+<a id="container" *ngIf="post" [routerLink]="['/post', post.id]">
+	<div id="card">
+		<img id="image" [src]="post.cover" [alt]="post.title">
+		<div id="title" class="text-center">
+			{{ post.title | capitalize }}
+		</div>
+	</div>
+</a>

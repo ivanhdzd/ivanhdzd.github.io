@@ -1,0 +1,12 @@
+<section *ngIf="post">
+	<article class="text-center">
+		<img [src]="post.cover" [alt]="post.title">
+	</article>
+	<h1 class="text-center mt-5">{{ post.title | capitalize }}</h1>
+	<h5 class="text-center my-4">Publicado el {{ post.date | esDate }}</h5>
+	<ngx-md [data]="post.content"></ngx-md>
+	<hr>
+	<article>
+		<disqus [identifier]="pageID"></disqus>
+	</article>
+</section>

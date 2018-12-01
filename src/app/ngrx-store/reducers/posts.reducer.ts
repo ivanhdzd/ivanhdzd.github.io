@@ -1,5 +1,6 @@
-import { Actions, SET_POSTS, UPDATE_POST } from '../actions/posts.actions';
+import { Actions, SET_POSTS, UPDATE_POST, UPDATE_POSTS } from '../actions/posts.actions';
 import { Post } from '../../models/post.model';
+import { clone } from '../../functions/utils.functions';
 
 /**
  * Posts reducer function.
@@ -12,7 +13,9 @@ export function posts(state: Post[] = null, action: Actions): Post[] {
 		case SET_POSTS:
 			return <Post[]>action.payload;
 		case UPDATE_POST:
-			return updatePost(state, <Post>action.payload);
+			return updatePost(clone(state), <Post>action.payload);
+		case UPDATE_POSTS:
+			return updatePosts(clone(state), <Post[]>action.payload);
 		default:
 			return state;
 	}
@@ -30,4 +33,20 @@ function updatePost(state: Post[], post: Post): Post[] {
 	if (index === -1) return state;
 	state[index] = post;
 	return state;
+}
+
+/**
+ * Update posts list content in current state.
+ * @param state (Post[]) old state value.
+ * @param posts (Post[]) data to update.
+ * @returns Post[]
+ */
+function updatePosts(state: Post[], posts: Post[]): Post[] {
+	if (!state) return posts;
+	posts.forEach((post: Post) => {
+		const index: number = state.findIndex((obj: Post) => obj.title === post.title);
+		if (index === -1) state.push(post);
+		else state[index] = post;
+	});
+	return state.sort((a: Post, b: Post) => +b.date - +a.date);
 }

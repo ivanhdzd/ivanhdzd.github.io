@@ -1,2 +1,9 @@
 <h1 class="text-center">Blog</h1>
-{{ posts | json }}
+<section class="row">
+	<article class="col-12 col-md-6 col-xl-4" *ngFor="let post of posts">
+		<app-thumbnail-post [post]="post" class="thumbnail-post"></app-thumbnail-post>
+	</article>
+</section>
+<section class="text-center" *ngIf="showBtnLoadMorePosts">
+	<button class="btn btn-outline-dark btn-lg" (click)="LoadMorePosts()">Cargar m&aacute;s posts</button>
+</section>

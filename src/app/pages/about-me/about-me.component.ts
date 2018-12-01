@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { AboutMeService } from '../../services/about-me/about-me.service';
 
@@ -8,11 +9,18 @@ import { AboutMeService } from '../../services/about-me/about-me.service';
 	styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit {
+	/** About me string content */
 	public aboutMe: string = null;
 
-	constructor(private aboutMeService: AboutMeService) { }
+	constructor(title: Title, private aboutMeService: AboutMeService) {
+		title.setTitle('IvánHdzD - Sobre mí');
+	}
 
+	/**
+	 * Get about me string value.
+	 */
 	public async ngOnInit(): Promise<void> {
+		window.scroll(0, 0);
 		try {
 			this.aboutMe = await this.aboutMeService.getAboutData();
 		} catch (err) {
