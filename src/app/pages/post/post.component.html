@@ -1,12 +1,14 @@
 <section *ngIf="post">
-	<article class="text-center">
-		<img [src]="post.cover" [alt]="post.title">
-	</article>
-	<h1 class="text-center mt-5">{{ post.title | capitalize }}</h1>
-	<h5 class="text-center my-4">Publicado el {{ post.date | esDate }}</h5>
-	<ngx-md [data]="post.content"></ngx-md>
-	<hr>
-	<article>
-		<disqus [identifier]="pageID"></disqus>
+	<article class="container">
+		<div class="text-center">
+			<img [src]="post.cover" [alt]="post.title">
+		</div>
+		<h1 class="text-center mt-5">{{ post.title | capitalize }}</h1>
+		<h5 class="text-center my-4">Publicado el {{ post.date | esDate }}</h5>
+		<markdown [data]="post.content"></markdown>
+		<hr>
+		<div>
+			<disqus [identifier]="pageID"></disqus>
+		</div>
 	</article>
 </section>

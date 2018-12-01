@@ -29,7 +29,33 @@
 						"styles": [
 							"src/scss/styles.scss"
 						],
-						"scripts": []
+						"scripts": [
+							"node_modules/marked/lib/marked.js",
+							"node_modules/prismjs/prism.js",
+							"node_modules/prismjs/components/prism-markup.min.js",
+							"node_modules/prismjs/components/prism-markup-templating.min.js",
+							"node_modules/prismjs/components/prism-aspnet.min.js",
+							"node_modules/prismjs/components/prism-c.min.js",
+							"node_modules/prismjs/components/prism-cpp.min.js",
+							"node_modules/prismjs/components/prism-csharp.min.js",
+							"node_modules/prismjs/components/prism-css.min.js",
+							"node_modules/prismjs/components/prism-docker.min.js",
+							"node_modules/prismjs/components/prism-git.min.js",
+							"node_modules/prismjs/components/prism-graphql.min.js",
+							"node_modules/prismjs/components/prism-java.min.js",
+							"node_modules/prismjs/components/prism-javascript.min.js",
+							"node_modules/prismjs/components/prism-json.min.js",
+							"node_modules/prismjs/components/prism-jsx.min.js",
+							"node_modules/prismjs/components/prism-kotlin.min.js",
+							"node_modules/prismjs/components/prism-nginx.min.js",
+							"node_modules/prismjs/components/prism-php.min.js",
+							"node_modules/prismjs/components/prism-pug.min.js",
+							"node_modules/prismjs/components/prism-python.min.js",
+							"node_modules/prismjs/components/prism-scss.min.js",
+							"node_modules/prismjs/components/prism-sql.min.js",
+							"node_modules/prismjs/components/prism-twig.min.js",
+							"node_modules/prismjs/components/prism-typescript.min.js"
+						]
 					},
 					"configurations": {
 						"production": {

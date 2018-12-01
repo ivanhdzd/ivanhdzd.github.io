@@ -1,7 +1,9 @@
 <h1 class="text-center">Blog</h1>
-<section class="row">
-	<article class="col-12 col-md-6 col-xl-4" *ngFor="let post of posts">
-		<app-thumbnail-post [post]="post" class="thumbnail-post"></app-thumbnail-post>
+<section class="container">
+	<article class="row">
+		<div class="col-12 col-md-6 col-xl-4" *ngFor="let post of posts">
+			<app-thumbnail-post [post]="post" class="thumbnail-post"></app-thumbnail-post>
+		</div>
 	</article>
 </section>
 <section class="text-center" *ngIf="showBtnLoadMorePosts">

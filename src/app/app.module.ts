@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
 import { DisqusModule } from 'ngx-disqus';
-import { NgxMdModule } from 'ngx-md';
 
 import { AppRoutingModule } from './modules/app-routing.module';
 import { NgrxStoreModule } from './modules/ngrx-store.module';
@@ -38,8 +38,8 @@ import { ThumbnailPostComponent } from './components/thumbnail-post/thumbnail-po
 		BrowserModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
+		MarkdownModule.forRoot(),
 		DisqusModule.forRoot('ivanhdzd'),
-		NgxMdModule.forRoot(),
 		NgrxStoreModule,
 		AppRoutingModule
 	],

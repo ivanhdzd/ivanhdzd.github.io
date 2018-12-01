@@ -27,7 +27,7 @@
 		"jquery": "^3.3.1",
 		"moment": "^2.22.2",
 		"ngx-disqus": "^2.4.3",
-		"ngx-md": "^7.0.0",
+		"ngx-markdown": "^7.0.2",
 		"popper.js": "^1.14.6",
 		"prismjs": "^1.15.0",
 		"rxjs": "~6.3.3",
