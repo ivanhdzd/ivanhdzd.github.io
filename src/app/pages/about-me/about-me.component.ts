@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
+import { SeoService } from '../../services/seo/seo.service';
 import { AboutMeService } from '../../services/about-me/about-me.service';
 
 @Component({
@@ -12,8 +14,13 @@ export class AboutMeComponent implements OnInit {
 	/** About me string content */
 	public aboutMe: string = null;
 
-	constructor(title: Title, private aboutMeService: AboutMeService) {
+	constructor(title: Title, router: Router, private aboutMeService: AboutMeService, seo: SeoService) {
 		title.setTitle('IvánHdzD - Sobre mí');
+		seo.SetTags({
+			title: 'Sobre mí',
+			description: 'Un poco de lo que me apasiona hacer',
+			path: router.url
+		});
 	}
 
 	/**

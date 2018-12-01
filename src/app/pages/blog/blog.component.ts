@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
+import { SeoService } from '../../services/seo/seo.service';
 import { BlogService } from '../../services/blog/blog.service';
 import { Post } from 'src/app/models/post.model';
 
@@ -15,8 +17,13 @@ export class BlogComponent implements OnInit {
 	/** Flag to show/hide load more posts button */
 	public showBtnLoadMorePosts: boolean = true;
 
-	constructor(title: Title, private blogService: BlogService) {
+	constructor(title: Title, router: Router, private blogService: BlogService, seo: SeoService) {
 		title.setTitle('IvánHdzD - Blog');
+		seo.SetTags({
+			title: 'Mi blog personal',
+			description: 'Una serie de artículos sobre desarrollo de software',
+			path: router.url
+		});
 	}
 
 	/**

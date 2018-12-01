@@ -8,8 +8,9 @@ import { DisqusModule } from 'ngx-disqus';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { NgrxStoreModule } from './modules/ngrx-store.module';
 
-import { AboutMeService } from './services/about-me/about-me.service';
+import { SeoService } from './services/seo/seo.service';
 import { BlogService } from './services/blog/blog.service';
+import { AboutMeService } from './services/about-me/about-me.service';
 
 import { EsDatePipe } from './pipes/es-date/es-date.pipe';
 import { CapitalizePipe } from './pipes/capitalize/capitalize.pipe';
@@ -43,7 +44,7 @@ import { ThumbnailPostComponent } from './components/thumbnail-post/thumbnail-po
 		NgrxStoreModule,
 		AppRoutingModule
 	],
-	providers: [AboutMeService, BlogService],
+	providers: [SeoService, BlogService, AboutMeService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -58,6 +58,7 @@ export class BlogService extends BaseHttpService {
 			this.allPostsAlreadyLoaded = true;
 		}
 		posts = posts.slice(firstIndex, lastIndex).map((post: Post) => {
+			post.thumbnail = this._GetPostThumbnail(post.id);
 			post.cover = this._GetPostCover(post.id);
 			return post;
 		});
@@ -78,13 +79,14 @@ export class BlogService extends BaseHttpService {
 			if (!post) return null;
 			if (post.content) return post;
 			post.content = await this.GetFile(`blog/${ id }`);
-			post = this._SetOriginalTitle(post);
+			post = this._ParsePostData(post);
 			this.store.dispatch(new UpdatePost(post));
 		} else {
 			post = this._GenerateBasicPost(id);
 			post.cover = this._GetPostCover(id);
+			post.thumbnail = this._GetPostThumbnail(id);
 			post.content = await this.GetFile(`blog/${ id }`);
-			post = this._SetOriginalTitle(post);
+			post = this._ParsePostData(post);
 		}
 		return post;
 	}
@@ -112,11 +114,20 @@ export class BlogService extends BaseHttpService {
 	}
 
 	/**
-	 * Get original title from content data.
+	 * Generate post thumbnail URL by it ID.
+	 * @param id (string) post ID to generate thumbnail URL.
+	 * @returns (string) post thumbnail URL.
+	 */
+	private _GetPostThumbnail(id: string): string {
+		return `${ IMG_BASE_URL }/blog/${ id }/thumbnail.jpg`;
+	}
+
+	/**
+	 * Parse post data.
 	 * @param post (Post) to try to get original name.
 	 * @returns (Post) post with title updated.
 	 */
-	private _SetOriginalTitle(post: Post): Post {
+	private _ParsePostData(post: Post): Post {
 		const titleGetRegex: RegExp = /^#\s.+\n/;
 		const titleBeautifyRegex: RegExp = /(#\s|\n)/g;
 		const arr = titleGetRegex.exec(post.content);

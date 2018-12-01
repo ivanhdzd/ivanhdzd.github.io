@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Post } from 'src/app/models/post.model';
+
+import { Post } from '../../models/post.model';
 
 @Component({
 	selector: 'app-thumbnail-post',
@@ -7,6 +8,5 @@ import { Post } from 'src/app/models/post.model';
 	styleUrls: ['./thumbnail-post.component.scss']
 })
 export class ThumbnailPostComponent  {
-	/** Post input value */
 	@Input() post: Post = null;
 }
