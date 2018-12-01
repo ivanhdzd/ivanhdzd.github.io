@@ -10,8 +10,6 @@ import { SetPosts, UpdatePost, UpdatePosts } from '../../ngrx-store/actions/post
 import { AppState } from '../../ngrx-store/app-state';
 import { Post } from '../../models/post.model';
 
-import { postsMock } from '../../mocks/posts.mock';
-
 @Injectable({
 	providedIn: 'root'
 })
@@ -36,7 +34,6 @@ export class BlogService extends BaseHttpService {
 	public async InitializePosts(): Promise<boolean> {
 		let posts: Post[] = await observable2promise(this.posts$);
 		if (posts && posts.length > 0) return;
-		// posts = postsMock.map(({ id, date, title }) => ({ id, date, title }));
 		posts = (await this.GetFolder('blog')).map(({ name }) => this._GenerateBasicPost(name))
 			.sort((a: Post, b: Post) => +b.date - +a.date);
 		this.store.dispatch(new SetPosts(posts));
@@ -121,9 +118,10 @@ export class BlogService extends BaseHttpService {
 	 */
 	private _SetOriginalTitle(post: Post): Post {
 		const titleGetRegex: RegExp = /^#\s.+\n/;
+		const titleBeautifyRegex: RegExp = /(#\s|\n)/g;
 		const arr = titleGetRegex.exec(post.content);
 		if (!arr) return post;
-		post.title = arr[0].replace(/(#\s|\n)/g, '');
+		post.title = arr[0].replace(titleBeautifyRegex, '');
 		post.content = post.content.replace(titleGetRegex, '');
 		return post;
 	}

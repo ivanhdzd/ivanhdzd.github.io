@@ -1,16 +1,18 @@
+# Introducción a Angular
+
 En este post daré una introducción a Angular 7 sobre sus aspectos escenciales y al final crearé una página sencilla con este grandioso framework.
 
-# ¿Qué es Angular?
+## ¿Qué es Angular?
 
 [Angular](https://angular.io/) es un framework para generar aplicaciones web, es desarrollado por Google y utiliza Typescript como su lenguaje principal.
 
-# Angular y sus versiones
+## Angular y sus versiones
 
 Actualmente la versión estable de Angular es la 7, y en un par de meses se va a actualizar a la 8, ([aquí puedes checar las versiones de Angular](https://github.com/angular/angular/releases)), y recomiendo usar siempre las versiones estables más actuales, ya que por lo regular tienen correcciones de errores, optimizaciones o nuevas funcionalidades.
 
 Angular y sus versiones, en conjunto con su nombre, han causado algo de confusión, ya que la versión 1, oficialmente llamada AngularJS es completamente diferente de sus versiones sucesoras 2/4/5/6/7, ya que Google creó la versión 2 prácticamente desde cero, por lo que dicha versión no hereda nada de código de su predecesor. Incluso cambió (muy poco notorio) el nombre a Angular.IO; sin embargo, muchos desarrolladores se siguen refiriendo a AngularJS como Angular 1 y Angular.IO como Angular 2, por lo que, si necesitas buscar algún tema relacionado con Angular.IO lo recomendable es buscarlo como Angular 2, 4, 5, 6 ó 7.
 
-# Desarrollo de SPA con Angular
+## Desarrollo de SPA con Angular
 
 Una [SPA (Single Page Application)](https://es.wikipedia.org/wiki/Single-page_application) es una aplicación de una sola página, esto significa que un sitio web desarrollado con Angular no necesita recargarse para navegar dentro de dicho sitio, y esto es posible porque se cargan los archivos HTML, Javascript y CSS necesarios una sola vez, y conforme se requieran más, Angular se encarga de cargar los archivos faltantes necesarios sin necesidad de recargar la página, esto se logra a través de **Lazy Loagding** de Angular, tema del que hablaré en otro post.
 
@@ -18,35 +20,35 @@ Las ventajas de usar SPA son principalmente de experiencia de usuario (UX), ya q
 
 Angular se basa en desarrollar SPAs.
 
-# Desarrollo basado en componentes
+## Desarrollo basado en componentes
 
 Angular.IO, a diferencia de su predecesor AngularJS basado en [MVC](https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador), se basa en el [desarrollo de componentes](https://es.wikipedia.org/wiki/Ingenier%C3%ADa_de_software_basada_en_componentes), lo que significa desarrollar funcionalidades encapsuladas e independientes mediante componentes reutilizables en cualquier parte el sistema.
 
 Un componente de Angular se basa en 3 elementos principales: su respectiva plantilla HTML, sus estilos CSS (También se puede usar SCSS) y su funcionalidad en Typescript; adicionalmente cada componente de Angular cuenta con su propio archivo Typescript para sus pruebas unitarias (Éste es opcional). Sus principales elementos (su plantilla, sus estilos y su funcionalidad) regularmente se manejan de forma separada en sus respectivos archivos **.html**, **.css** (o **.scss**) y **.ts**, que es la forma en la que personalmente acostumbro usarlos, aunque también se pueden unificar en un solo archivo **.ts**.
 
-# Mi primera SPA con Angular
+## Mi primera SPA con Angular
 
 Para cuestiones didácticas vamos a generar una SPA con Angular que administre una lista de TODOs.
 
-## Preparando mi entorno de desarrollo
+### Preparando mi entorno de desarrollo
 
 Vamos a crear una SPA básica de Angular, para ello necesitamos tener instalado [Node.JS](https://nodejs.org/es/), lo pueden descargar desde su página oficial.
 
-### Instalndo Node.JS en Windows
+#### Instalndo Node.JS en Windows
 
 Si estas desarrollando con Windows, solo se necesita descargar el **.msi** de Node.JS desde su [páfina oficial](https://nodejs.org/es/download/) e instalarlo. Posteriormente recomiendo instalar [GIT](https://es.wikipedia.org/wiki/Git), ya que en Windows éste trae una consola llamada Git Bash con la que podemos trabajar, porque en la consola MS-DOS no suelen correr los comandos que necesitamos, pueden [descargar GIT para Windows desde aquí](https://git-scm.com/download/win).
 
 Si usan Windows 10, pueden trabajar con la PowerShell (Es la que uso personalmente) sin ningún problema.
 
-### Instalando en Linux/Mac
+#### Instalando en Linux/Mac
 
 Si usas Linux o Mac, recomiendo instalar Node.JS a través de [NVM (Node Version Manager)](https://github.com/creationix/nvm), ya que de esta forma pueden instalar varias versiones de Node.JS y seleccionar la que necesiten, pueden instalarlo siguiendo las instrucciones de su [repositorio en GitHub](https://github.com/creationix/nvm#installation).
 
-#### Otra alternativa a NPM
+##### Otra alternativa a NPM
 
 Node.JS trae instalado por defecto una herramienta llamada **[NPM](https://es.wikipedia.org/wiki/Npm)**, la cual se usa para instalar dependencias o ejecutar los comandos que requieramos al desarrollar con Node.JS. Sin embargo, existe otra opción a NPM, [Yarn](https://es.wikipedia.org/wiki/Yarn_(Facebook)), que al igual que NPM, se usa para instalar dependencias y ejecutar comandos, personalmente uso Yarn, ya que sus comandos son un poco más simples que los de NPM, [aquí pueden descargarlo](https://yarnpkg.com/en/docs/install).
 
-## Validando la instalación
+### Validando la instalación
 
 Ya instalado Node.JS, Yarn (Si es que se deciden por usar Yarn, ya que es opcional), y GIT para Windows (Si es que usas Windows), procedemos a confirmar la instalación abriendo la Terminal en Linux o Mac, la Consola de GIT o la PowerShell en Windows y ejecutamos el comando:
 
@@ -60,7 +62,7 @@ El comando `node` nos permite ejecutar cualquier archivo **.js** desde terminal,
 
 La bandera `--version` (Se identifica como bandera cuando tiene 2 guiones antes de la palabra, en este caso *version*) indica al comando `node` que estamos solicitando su versión actual.
 
-## Instalando la Interfaz de Línea de Comandos de Angular
+### Instalando la Interfaz de Línea de Comandos de Angular
 
 La [**Interfaz de Línea de Comandos de Angular**](https://cli.angular.io/), oficialmente llamado @Angular/CLI es una dependencia de Node.JS y se encarga de crear la estructura de los proyectos de Angular de una manera muy fácil. Ésta dependencia necesita instalarse de manera global, por lo que en su instalación usa la bandera `--global`, o en su forma reducida `-g`.
 
@@ -101,7 +103,7 @@ Angular:
 
 Si aparece un error, lo ideal es buscarlo en [Google](https://www.google.com.mx/).
 
-## Usando el CLI de Angular
+### Usando el CLI de Angular
 
 Para crear nuestra primera SPA con Angular, abrimos la consola (Terminal, Git Bash o PowerShell), nos dirijimos al directorio donde guardaremos el proyecto (Por ejemplo: ..\Develop\Angular) y ejecutamos el comando:
 
@@ -154,7 +156,7 @@ Dicho servidor de desarrollo funciona internamente con [Webpack](https://webpack
 
 Cuando si es necesario reiniciarlo es cuando instalamos dependencias Node.JS o modificamos el archivo `angular.json`, del cual hablaremos más adelante.
 
-## Editando nuestra SPA
+### Editando nuestra SPA
 
 Ya en este punto podemos manipular y editar nuestra SPA, para ello abrimos el proyecto con un editor de texto, personalmente uso Visual Studio Code, porque instalándole extensiones puede funcionar prácticamente como un IDE, con funcionalidades de autocompletado, detección de errores de sintaxis, entre otras cosas (Ésto también lo puedes hacer con otros editores como Atom.IO o Sublime Text, ya probé todos estos editores y me gustó mas VSCode), pueden descargarlo desde su [pagina oficial](https://code.visualstudio.com/).
 
@@ -301,7 +303,7 @@ const routes: Routes = [];
 export class AppRoutingModule { }
 ```
 
-## Agregando Bootstrap 4 a nuestra SPA
+### Agregando Bootstrap 4 a nuestra SPA
 
 Para darle algo de estilo CSS con Boostrap 4, vamos a ver cómo integrarlo con Angular. Muchos otros desarrolladores optan por integrar Bootstrap con otras dependencias de terceros como [ng-boostrap](https://ng-bootstrap.github.io/#/getting-started), pero en lo personal opto por integrar directamente Bootstrap junto con sus dependencias.
 
@@ -416,7 +418,7 @@ Finalmente editamos el archivo `src/app/scss/styles.scss`, agregándole el sigui
 
 Ya con esta configuración el proyecto tiene integrado las hojas de estilo de Bootstrap.
 
-### Integrando las dependencias de Bootstrap
+#### Integrando las dependencias de Bootstrap
 
 Si necesitas usar los eventos propioes de Bootstrap, necesitas integrar los archivos Javascript de JQuery, Popper.js y Bootstrap, para ello volvemos a modificar el archivo `angular.json`, abajo de la propiedad `styles` se encuentra otra propiedar con un arreglo vacío llamada `scripts`, dentro de éste importamos dichos archivos:
 
@@ -444,7 +446,7 @@ Si necesitas usar los eventos propioes de Bootstrap, necesitas integrar los arch
 
 Y ya con eso podemos hacer uso de JQuery dentro de Angular.
 
-## Generando los primeros componentes
+### Generando los primeros componentes
 
 El CLI de Angular genera todos sus archivos propios de Angular en el directorio `src/app`, por lo que cuando se generan varios archivos, tiende a ser algo desorganizado; en lo personal genero directorios que indiquen el tipo de archivo que resguarda, en el caso de los componentes asignados a routes, los almaceno en un directorio nombrado `pages` (ya que técnicamente cada uno representa una página de la aplicación), y en un directorio nombrado `components` resguardo los componentes reutilizables que componen parte del contenido de los componentes del directorio `pages`.
 
@@ -594,7 +596,7 @@ El resultado será similar a:
 
 ![Componentes en Angular](https://github.com/ivanhdzd/ivanhdzd.github.io/raw/docs/docs/blog/2018-11-30-introduccion-a-angular/components.jpg "Componentes en Angular")
 
-## Configurando el módulo routing
+### Configurando el módulo routing
 
 Es momento de configurar el routing de nuestra aplicación, el routing se basa en generar rutas dentro de nuestra aplicación, y cada ruta debe mostrar una vista diferente, para nuestro ejemplo de TODOs vamos a generar 3 rutas:
 
