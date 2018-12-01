@@ -24,7 +24,7 @@ Angular se basa en desarrollar SPAs.
 
 Angular.IO, a diferencia de su predecesor AngularJS basado en [MVC](https://es.wikipedia.org/wiki/Modelo%E2%80%93vista%E2%80%93controlador), se basa en el [desarrollo de componentes](https://es.wikipedia.org/wiki/Ingenier%C3%ADa_de_software_basada_en_componentes), lo que significa desarrollar funcionalidades encapsuladas e independientes mediante componentes reutilizables en cualquier parte el sistema.
 
-Un componente de Angular se basa en 3 elementos principales: su respectiva plantilla HTML, sus estilos CSS (También se puede usar SCSS) y su funcionalidad en Typescript; adicionalmente cada componente de Angular cuenta con su propio archivo Typescript para sus pruebas unitarias (Éste es opcional). Sus principales elementos (su plantilla, sus estilos y su funcionalidad) regularmente se manejan de forma separada en sus respectivos archivos **.html**, **.css** (o **.scss**) y **.ts**, que es la forma en la que personalmente acostumbro usarlos, aunque también se pueden unificar en un solo archivo **.ts**.
+Un componente de Angular se basa en 3 elementos principales: su respectiva plantilla HTML, sus estilos CSS (También se puede usar SCSS) y su funcionalidad en Typescript; adicionalmente cada componente de Angular cuenta con su propio archivo Typescript para sus pruebas unitarias (Éste es opcional). Sus principales elementos (su plantilla, sus estilos y su funcionalidad) regularmente se manejan de forma separada en sus respectivos archivos **.html**, **.css** (o **.scss**, **.sass**, **.less**) y **.ts**, que es la forma en la que personalmente acostumbro usarlos, aunque también se pueden unificar en un solo archivo **.ts**.
 
 ## Mi primera SPA con Angular
 
@@ -34,7 +34,7 @@ Para cuestiones didácticas vamos a generar una SPA con Angular que administre u
 
 Vamos a crear una SPA básica de Angular, para ello necesitamos tener instalado [Node.JS](https://nodejs.org/es/), lo pueden descargar desde su página oficial.
 
-#### Instalndo Node.JS en Windows
+#### Instalando Node.JS en Windows
 
 Si estas desarrollando con Windows, solo se necesita descargar el **.msi** de Node.JS desde su [páfina oficial](https://nodejs.org/es/download/) e instalarlo. Posteriormente recomiendo instalar [GIT](https://es.wikipedia.org/wiki/Git), ya que en Windows éste trae una consola llamada Git Bash con la que podemos trabajar, porque en la consola MS-DOS no suelen correr los comandos que necesitamos, pueden [descargar GIT para Windows desde aquí](https://git-scm.com/download/win).
 
@@ -74,7 +74,7 @@ npm install --global @angular/cli
 
 Si vas a usar Yarn, ejecuta:
 
-```
+```shell
 yarn add --global @angular/cli
 ```
 
@@ -86,7 +86,7 @@ ng --version
 
 Y debe aparecer la información de Angular:
 
-```
+```shell
      _                      _                 ____ _     ___
     / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
    / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
@@ -224,7 +224,7 @@ En el editor de texto podemos observar la estructura del proyecto respecto a sus
 
 - **src/app/app.module.ts**: Este archivo guarda la configuración principal de Angular. Angular funciona a través de módulos, en donde declaras que dependencias de Angular necesitas en tu proyecto.
 
-```ts
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -247,7 +247,7 @@ export class AppModule { }
 
 - **src/app/app.component.ts**: Nombrado AppComponent, es el componente padre, el componente principal de nuestra SPA, dentro de él se inyectan los demás componentes.
 
-```ts
+```typescript
 import { Component } from '@angular/core';
 
 @Component({
@@ -290,7 +290,7 @@ export class AppComponent {
 
 - **src/app/app-routing.module.ts**: Es el módulo encargado de gestionar las rutas de nuestra SPA.
 
-```ts
+```typescript
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -460,7 +460,7 @@ ng generate component pages/todos
 
 Al abrir el archivo `src/app/pages/todos/todos.component.ts`, veremos un contenido similar a:
 
-```ts
+```typescript
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -538,7 +538,7 @@ Para hacer pruebas rápidas editamos la plantilla HTML del componente `src/app/p
 
 Ya generados los componentes, verificamos que se hayan importado en el módulo principal de nuestra aplicación, para ello abrimos el archivo `src/app/app-routing.module.ts` y validamos que cada componente se haya imortado y agregado a las declaraciones del módulo, teniendo el siguiente contenido:
 
-```ts
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -616,7 +616,7 @@ ng g c pages/page-not-found
 
 Para mantener lo más ordenado posible nuestro proyecto, vamos a crear el directorio `src/app/modules` y vamos a mover a dicho directorio el módulo `src/app/app-routing.module.ts` y vamos a actualizar su delcaración en `src/app/app.module.ts`:
 
-```ts
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -628,7 +628,7 @@ import { AppComponent } from './app.component';
 
 Ahora abrimos el módulo `src/app/modules/app-routing.module.ts` y vamos a importar los componentes creados anteriormente:
 
-```ts
+```typescript
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -643,7 +643,7 @@ const routes: Routes = [];
 
 Vamos a definir las rutas por medio de la constante `routes` dentro de nuestro módulo:
 
-```ts
+```typescript
 const routes: Routes = [
     { path: '', redirectTo: 'todos', pathMatch: 'full' },
     { path: 'todos', component: TodosComponent },
