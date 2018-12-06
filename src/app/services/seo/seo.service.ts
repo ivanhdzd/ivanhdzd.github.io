@@ -16,7 +16,7 @@ export class SeoService {
 	 */
 	public SetTags(config: Seo): void {
 		config.description = `${ config.description.replace(/^\n/, '').substr(0, 128) }...`;
-		if (!config.image) config.image = `${ BASE_HREF }/assets/img/ivan.jpg`;
+		if (!config.image) config.image = `${ BASE_HREF }/assets/img/ivanhdzd.jpg`;
 
 		this.meta.updateTag({ name: 'description', content: config.description });
 		this.meta.updateTag({ name: 'twitter:card', content: 'summary' });

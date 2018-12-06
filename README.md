@@ -10,6 +10,6 @@ Finalmente cuenta con la sección `Docs`, que es la documentación generada por 
 
 Este repositorio se compone de 3 ramas principales:
 
-- **master** tiene dentro el código trasnpilado de Angular, e incluye dentro el directorio `compodoc` en donde se encuentra la documentación autogenerada.
-- **develop** tiene el código fuente del sitio web.
-- **docs** tiene el directorio `docs` en donde se almacena el contenido de los posts.
+- **[master](https://github.com/ivanhdzd/ivanhdzd.github.io/tree/master)** tiene dentro el código trasnpilado de Angular, e incluye dentro el directorio `compodoc` en donde se encuentra la documentación autogenerada.
+- **[develop](https://github.com/ivanhdzd/ivanhdzd.github.io/tree/develop)** tiene el código fuente del sitio web.
+- **[docs](https://github.com/ivanhdzd/ivanhdzd.github.io/tree/docs)** tiene el directorio `docs` en donde se almacena el contenido de los posts.
