@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ivanhdzd-web documentation</title>
+        <title>ivanhdzd documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ivanhdzd-web documentation</a>
+            <a href="../" class="navbar-brand">ivanhdzd documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
 
@@ -247,7 +247,7 @@ export class SeoService {
 	 */
 	public SetTags(config: Seo): void {
 		config.description &#x3D; &#x60;${ config.description.replace(/^\n/, &#x27;&#x27;).substr(0, 128) }...&#x60;;
-		if (!config.image) config.image &#x3D; &#x60;${ BASE_HREF }/assets/img/ivan.jpg&#x60;;
+		if (!config.image) config.image &#x3D; &#x60;${ BASE_HREF }/assets/img/ivanhdzd.jpg&#x60;;
 
 		this.meta.updateTag({ name: &#x27;description&#x27;, content: config.description });
 		this.meta.updateTag({ name: &#x27;twitter:card&#x27;, content: &#x27;summary&#x27; });
